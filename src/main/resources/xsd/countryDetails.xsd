@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ashref.com/soap/ws/countryDetails"
+	xmlns:tns="http://www.ashref.com/soap/ws/countryDetails"
+	elementFormDefault="qualified">
+	
+	<xsd:element name="CountryRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="name" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element  name="CountryResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="country" type="tns:country" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="country">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="capital" type="xsd:string" />
+			<xsd:element name="population" type="xsd:long" />
+			<xsd:element name="currency" type="tns:currency"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="currency">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EUR" />
+			<xsd:enumeration value="TND" />
+			<xsd:enumeration value="USD" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+</xsd:schema>
