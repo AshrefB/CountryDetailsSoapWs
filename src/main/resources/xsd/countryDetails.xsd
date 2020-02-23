@@ -34,6 +34,7 @@
 			<xsd:enumeration value="EUR" />
 			<xsd:enumeration value="TND" />
 			<xsd:enumeration value="USD" />
+			<xsd:enumeration value="CAD" />
 		</xsd:restriction>
 	</xsd:simpleType>
 	
